@@ -1,0 +1,36 @@
+name: Update README Index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.md'
+      - '!README.md'
+      - '!CHANGELOG.md'
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Regenerate README and update CHANGELOG
+        run: python scripts/update_readme.py
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md CHANGELOG.md
+          git diff --cached --quiet || git commit -m "docs: auto-update README index [skip ci]"
+          git push
