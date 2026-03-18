@@ -1,6 +1,6 @@
 # AI Learning Repository
 
-> Auto-generated index. Last updated: 2026-03-18 17:21 UTC
+> Auto-generated index. Last updated: 2026-03-18 18:36 UTC
 > 2 topic(s) · 17 subtopic file(s)
 
 ---
@@ -31,7 +31,7 @@
 | 7 | [Python Code Patterns](RunPod/07-Python-Code-Patterns.md) | _Complete Serverless Handler — Model at Module Level, OOM-Safe Handler with Recovery, Streaming Handler — TextIteratorStreamer + Background Thread +9 more_ |
 | 8 | [Engineering Decisions](RunPod/08-Engineering-Decisions.md) | _Pods vs Serverless vs Bare GPU, When to Use Pods, When to Use Serverless +5 more_ |
 | 9 | [Debugging and Pitfalls](RunPod/09-Debugging-And-Pitfalls.md) | _OOM Crashes, Cold Start Too Slow, Spot Pod Interruption +8 more_ |
-| 10 | [RunPod Serverless Codebase Reference](RunPod/10-Serverless-Codebase-Reference.md) | _`FluxPipeline` and `pipe`, `torch` role in the handler, `torch.Generator` and deterministic generation +3 more_ |
+| 10 | [RunPod Serverless Codebase Reference](RunPod/10-Serverless-Codebase-Reference.md) | _`FluxPipeline` and `pipe`, `torch` role in the handler, `torch.Generator` and deterministic generation +7 more_ |
 | 11 | [ML Infrastructure Fundamentals](RunPod/11-ML-Infrastructure-Fundamentals.md) | _Why GPU over CPU, GPU hardware components, SIMD architecture +11 more_ |
 
 ---
@@ -40,6 +40,8 @@
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
+| 2026-03-18 18:36 UTC | RunPod | RunPod Serverless Codebase Reference | Added/Updated |
+| 2026-03-18 18:36 UTC | RunPod | ML Infrastructure Fundamentals | Added/Updated |
 | 2026-03-18 17:21 UTC | AI-Infrastructure | The GPU: The "Factory Floor" of AI | Added/Updated |
 | 2026-03-18 17:21 UTC | AI-Infrastructure | Model Architecture & Loading Flow | Added/Updated |
 | 2026-03-18 17:21 UTC | AI-Infrastructure | RunPod Infrastructure: Pods vs. Serverless | Added/Updated |
@@ -48,8 +50,6 @@
 | 2026-03-18 17:21 UTC | AI-Infrastructure | The Framework Handshake | Added/Updated |
 | 2026-03-18 17:21 UTC | RunPod | RunPod Platform Overview | Added/Updated |
 | 2026-03-18 17:21 UTC | RunPod | RunPod Product Components | Added/Updated |
-| 2026-03-18 17:21 UTC | RunPod | RunPod Python SDK | Added/Updated |
-| 2026-03-18 17:21 UTC | RunPod | GPU Selection Guide | Added/Updated |
 
 ---
 

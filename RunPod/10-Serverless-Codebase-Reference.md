@@ -136,3 +136,116 @@ Cold start is the expensive path. See `05-Serverless-Deep-Dive.md` for FlashBoot
 - 1 worker = 1 container = 1 dedicated GPU (contiguous VRAM blocks required by CUDA cannot be split across physical cards)
 
 **Consequence**: scaling from 1 → N concurrent requests means N independent cold starts happening in parallel, not N requests sharing one already-loaded model.
+
+## `hf_token` and gated model authentication
+
+`hf_token` is a personal HuggingFace access token generated at `huggingface.co/settings/tokens`.
+
+`black-forest-labs/FLUX.1-dev` is a **gated model**: the model weights are not publicly downloadable. To access them:
+1. Visit the model page on HuggingFace and accept the license agreement with your account
+2. Authenticate in code before calling `from_pretrained()`:
+
+```python
+from huggingface_hub import login
+
+login(token=hf_token)
+
+pipe = FluxPipeline.from_pretrained(
+    "black-forest-labs/FLUX.1-dev",
+    torch_dtype=torch.bfloat16,
+)
+```
+
+**Without `login()`**: `from_pretrained()` raises a 401/403 HTTP error — even if the weights are already cached locally in the Network Volume. The token check happens before any local cache lookup when the model is gated.
+
+**In production**: pass `hf_token` as a RunPod secret (environment variable), never hardcode it in the Dockerfile or handler code.
+
+## `HF_HOME` and Network Volume path resolution
+
+`HF_HOME` is an environment variable that the entire HuggingFace ecosystem (transformers, diffusers, tokenizers, huggingface_hub) respects. It controls where model weights are read from and written to.
+
+**Dockerfile pattern:**
+```dockerfile
+ENV HF_HOME=/models
+```
+
+With this set, `FluxPipeline.from_pretrained("black-forest-labs/FLUX.1-dev")` automatically looks in `/models/hub/` — no explicit `cache_dir` argument required. The Network Volume is mounted at `/models`, so weights pre-downloaded at image-build time are found immediately.
+
+**`local_files_only=True`:**
+```python
+pipe = FluxPipeline.from_pretrained(
+    "black-forest-labs/FLUX.1-dev",
+    torch_dtype=torch.bfloat16,
+    local_files_only=True,   # crash if absent, never attempt download
+)
+```
+- Forces cache-only lookup; raises `EnvironmentError` if files are missing
+- Correct behavior for a pre-loaded Network Volume: a download attempt at cold-start would time out and waste money
+- Acts as a safety assertion that the pre-download step actually worked
+
+**Startup diagnostic:**
+```python
+print(f"HF_HOME={os.environ.get('HF_HOME', 'NOT SET')}")
+```
+Log this at handler startup to confirm the env var reached the container before any `from_pretrained()` call.
+
+## Frontend to backend communication
+
+The demo frontend (`demo/app.py`) calls the RunPod endpoint using raw HTTP — **not** the RunPod Python SDK.
+
+**Target endpoint:**
+```
+POST https://api.runpod.ai/v2/{RUNPOD_ENDPOINT_ID}/runsync
+```
+
+**Request pattern:**
+```python
+import requests, base64, os
+
+response = requests.post(
+    f"https://api.runpod.ai/v2/{os.environ['RUNPOD_ENDPOINT_ID']}/runsync",
+    headers={"Authorization": f"Bearer {os.environ['RUNPOD_API_KEY']}"},
+    json={
+        "input": {
+            "prompt": prompt,
+            "width": 1024,
+            "height": 1024,
+            "seed": 42,
+        }
+    },
+    timeout=300,
+)
+
+data = response.json()
+image_b64 = data["output"]["image"]          # Base64-encoded PNG
+image_bytes = base64.b64decode(image_b64)
+```
+
+**Key design points:**
+- `/runsync` blocks until the job completes and returns the result inline (vs `/run` which returns a job ID to poll)
+- Auth is a plain `Authorization: Bearer` header — same pattern as any REST API
+- The frontend has zero awareness of GPU, VRAM, Docker, or RunPod internals — fully decoupled from the backend runtime
+- The handler returns a Base64-encoded image string; the frontend decodes and renders it
+
+## Alternative inference libraries
+
+### RunPod SDK requirement
+
+| Deployment type | SDK required? | Reason |
+|---|---|---|
+| **Serverless** | Yes — `runpod.serverless.start()` | SDK handles job queue polling, health checks, autoscaling metrics, and worker lifecycle |
+| **Pods (always-on)** | No | Pod exposes raw network; use FastAPI, Flask, Django, or any HTTP server directly |
+
+### Alternatives to `diffusers` for image models
+
+| Library | How it works on RunPod | Best for |
+|---|---|---|
+| **ComfyUI headless** | Launch with `--listen --port 8000`; send JSON workflow payloads to its REST API | Node-graph workflows, ControlNet, complex multi-model pipelines |
+| **Cog** (by Replicate) | `cog.yaml` auto-builds an optimized Docker container; RunPod natively supports Cog containers | Teams already on Replicate; zero-config containerization |
+| **BentoML** | Dedicated AI serving framework with built-in request batching and GPU auto-scaling; portable across clouds | Production serving with batching requirements |
+
+### For LLMs (not image models)
+
+`diffusers` is image-specific. For large language models use:
+- **vLLM**: continuous batching, PagedAttention, OpenAI-compatible API endpoint
+- **TGI** (Text Generation Inference by HuggingFace): similar feature set, native HF model support
