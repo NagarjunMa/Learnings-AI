@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm:*)",
+      "Read(//Users/nagarjunmallesh/Downloads/**)",
+      "Bash(python3 -c \":*)",
+      "Read(//tmp/**)",
+      "Bash(python3:*)",
+      "Bash(git:*)",
+      "WebSearch"
+    ]
+  }
+}
