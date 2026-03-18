@@ -1,6 +1,6 @@
 # AI Learning Repository
 
-> Auto-generated index. Last updated: 2026-03-18 18:36 UTC
+> Auto-generated index. Last updated: 2026-03-18 19:39 UTC
 > 2 topic(s) · 17 subtopic file(s)
 
 ---
@@ -40,16 +40,16 @@
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
-| 2026-03-18 18:36 UTC | RunPod | RunPod Serverless Codebase Reference | Added/Updated |
-| 2026-03-18 18:36 UTC | RunPod | ML Infrastructure Fundamentals | Added/Updated |
-| 2026-03-18 17:21 UTC | AI-Infrastructure | The GPU: The "Factory Floor" of AI | Added/Updated |
-| 2026-03-18 17:21 UTC | AI-Infrastructure | Model Architecture & Loading Flow | Added/Updated |
-| 2026-03-18 17:21 UTC | AI-Infrastructure | RunPod Infrastructure: Pods vs. Serverless | Added/Updated |
-| 2026-03-18 17:21 UTC | AI-Infrastructure | Resource Optimization | Added/Updated |
-| 2026-03-18 17:21 UTC | AI-Infrastructure | Hybrid Training Workflow: Mac Mini + RunPod | Added/Updated |
-| 2026-03-18 17:21 UTC | AI-Infrastructure | The Framework Handshake | Added/Updated |
-| 2026-03-18 17:21 UTC | RunPod | RunPod Platform Overview | Added/Updated |
-| 2026-03-18 17:21 UTC | RunPod | RunPod Product Components | Added/Updated |
+| 2026-03-18 19:39 UTC | AI-Infrastructure | The GPU: The "Factory Floor" of AI | Added/Updated |
+| 2026-03-18 19:39 UTC | AI-Infrastructure | Model Architecture & Loading Flow | Added/Updated |
+| 2026-03-18 19:39 UTC | AI-Infrastructure | RunPod Infrastructure: Pods vs. Serverless | Added/Updated |
+| 2026-03-18 19:39 UTC | AI-Infrastructure | Resource Optimization | Added/Updated |
+| 2026-03-18 19:39 UTC | AI-Infrastructure | Hybrid Training Workflow: Mac Mini + RunPod | Added/Updated |
+| 2026-03-18 19:39 UTC | AI-Infrastructure | The Framework Handshake | Added/Updated |
+| 2026-03-18 19:39 UTC | RunPod | RunPod Platform Overview | Added/Updated |
+| 2026-03-18 19:39 UTC | RunPod | RunPod Product Components | Added/Updated |
+| 2026-03-18 19:39 UTC | RunPod | RunPod Python SDK | Added/Updated |
+| 2026-03-18 19:39 UTC | RunPod | GPU Selection Guide | Added/Updated |
 
 ---
 
