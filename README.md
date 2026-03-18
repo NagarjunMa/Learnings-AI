@@ -1,7 +1,7 @@
 # AI Learning Repository
 
-> Auto-generated index. Last updated: 2026-03-18 19:39 UTC
-> 2 topic(s) · 17 subtopic file(s)
+> Auto-generated index. Last updated: 2026-03-18 20:23 UTC
+> 3 topic(s) · 23 subtopic file(s)
 
 ---
 
@@ -17,6 +17,17 @@
 | 4 | [Resource Optimization](AI-Infrastructure/04-Resource-Optimization.md) | _VRAM Calculation Rule of Thumb, Advanced Tactics_ |
 | 5 | [Hybrid Training Workflow: Mac Mini + RunPod](AI-Infrastructure/05-Hybrid-Training-Workflow.md) | _The Pipeline, When to Use Each_ |
 | 6 | [The Framework Handshake](AI-Infrastructure/06-Framework-Handshake.md) | _Core Tools, How They Connect_ |
+
+### FastAPI
+
+| # | Subtopic | Covers |
+|---|----------|--------|
+| 1 | [FastAPI: Overview and Core Concepts](FastAPI/01-Overview-And-Core-Concepts.md) | _What FastAPI is, ASGI vs WSGI, Path Operations (Route Decorators) +4 more_ |
+| 2 | [FastAPI: Request and Response Handling](FastAPI/02-Request-And-Response.md) | _Path Parameters, Query Parameters, Request Body +6 more_ |
+| 3 | [FastAPI: Authentication Patterns](FastAPI/03-Authentication.md) | _API Key Auth, HTTP Basic Auth, Bearer Token / JWT +4 more_ |
+| 4 | [FastAPI: Connecting to a Frontend](FastAPI/04-Frontend-Integration.md) | _CORS, How a JS/React Frontend Calls FastAPI, Gradio / Streamlit Frontends +3 more_ |
+| 5 | [FastAPI: Backend Management and Serverless Deployment](FastAPI/05-Serverless-And-RunPod.md) | _FastAPI on RunPod Pods (Always-On), Model Loading at Startup — Lifespan Pattern, Passing State to Routes +4 more_ |
+| 6 | [FastAPI vs Flask: Detailed Comparison](FastAPI/06-FastAPI-vs-Flask.md) | _Architecture, Performance, Type System +6 more_ |
 
 ### RunPod
 
@@ -40,16 +51,16 @@
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
-| 2026-03-18 19:39 UTC | AI-Infrastructure | The GPU: The "Factory Floor" of AI | Added/Updated |
-| 2026-03-18 19:39 UTC | AI-Infrastructure | Model Architecture & Loading Flow | Added/Updated |
-| 2026-03-18 19:39 UTC | AI-Infrastructure | RunPod Infrastructure: Pods vs. Serverless | Added/Updated |
-| 2026-03-18 19:39 UTC | AI-Infrastructure | Resource Optimization | Added/Updated |
-| 2026-03-18 19:39 UTC | AI-Infrastructure | Hybrid Training Workflow: Mac Mini + RunPod | Added/Updated |
-| 2026-03-18 19:39 UTC | AI-Infrastructure | The Framework Handshake | Added/Updated |
-| 2026-03-18 19:39 UTC | RunPod | RunPod Platform Overview | Added/Updated |
-| 2026-03-18 19:39 UTC | RunPod | RunPod Product Components | Added/Updated |
-| 2026-03-18 19:39 UTC | RunPod | RunPod Python SDK | Added/Updated |
-| 2026-03-18 19:39 UTC | RunPod | GPU Selection Guide | Added/Updated |
+| 2026-03-18 20:23 UTC | AI-Infrastructure | The GPU: The "Factory Floor" of AI | Added/Updated |
+| 2026-03-18 20:23 UTC | AI-Infrastructure | Model Architecture & Loading Flow | Added/Updated |
+| 2026-03-18 20:23 UTC | AI-Infrastructure | RunPod Infrastructure: Pods vs. Serverless | Added/Updated |
+| 2026-03-18 20:23 UTC | AI-Infrastructure | Resource Optimization | Added/Updated |
+| 2026-03-18 20:23 UTC | AI-Infrastructure | Hybrid Training Workflow: Mac Mini + RunPod | Added/Updated |
+| 2026-03-18 20:23 UTC | AI-Infrastructure | The Framework Handshake | Added/Updated |
+| 2026-03-18 20:23 UTC | FastAPI | FastAPI: Overview and Core Concepts | Added/Updated |
+| 2026-03-18 20:23 UTC | FastAPI | FastAPI: Request and Response Handling | Added/Updated |
+| 2026-03-18 20:23 UTC | FastAPI | FastAPI: Authentication Patterns | Added/Updated |
+| 2026-03-18 20:23 UTC | FastAPI | FastAPI: Connecting to a Frontend | Added/Updated |
 
 ---
 
