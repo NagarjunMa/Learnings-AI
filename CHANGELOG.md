@@ -2,6 +2,12 @@
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
+| 2026-03-18 20:23 UTC | FastAPI | FastAPI: Overview and Core Concepts | Added/Updated |
+| 2026-03-18 20:23 UTC | FastAPI | FastAPI: Request and Response Handling | Added/Updated |
+| 2026-03-18 20:23 UTC | FastAPI | FastAPI: Authentication Patterns | Added/Updated |
+| 2026-03-18 20:23 UTC | FastAPI | FastAPI: Connecting to a Frontend | Added/Updated |
+| 2026-03-18 20:23 UTC | FastAPI | FastAPI: Backend Management and Serverless Deployment | Added/Updated |
+| 2026-03-18 20:23 UTC | FastAPI | FastAPI vs Flask: Detailed Comparison | Added/Updated |
 | 2026-03-18 20:23 UTC | AI-Infrastructure | The GPU: The "Factory Floor" of AI | Added/Updated |
 | 2026-03-18 20:23 UTC | AI-Infrastructure | Model Architecture & Loading Flow | Added/Updated |
 | 2026-03-18 20:23 UTC | AI-Infrastructure | RunPod Infrastructure: Pods vs. Serverless | Added/Updated |
