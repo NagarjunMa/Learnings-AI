@@ -1,7 +1,7 @@
 # AI Learning Repository
 
-> Auto-generated index. Last updated: 2026-03-17 13:39 UTC
-> 1 topic(s) · 6 subtopic file(s)
+> Auto-generated index. Last updated: 2026-03-18 03:55 UTC
+> 2 topic(s) · 15 subtopic file(s)
 
 ---
 
@@ -18,12 +18,27 @@
 | 5 | [Hybrid Training Workflow: Mac Mini + RunPod](AI-Infrastructure/05-Hybrid-Training-Workflow.md) | _The Pipeline, When to Use Each_ |
 | 6 | [The Framework Handshake](AI-Infrastructure/06-Framework-Handshake.md) | _Core Tools, How They Connect_ |
 
+### RunPod
+
+| # | Subtopic | Covers |
+|---|----------|--------|
+| 1 | [RunPod Platform Overview](RunPod/01-Overview-And-Platform.md) | _What Is RunPod, Core Value Proposition vs Hyperscalers, Two Compute Paradigms +3 more_ |
+| 2 | [RunPod Product Components](RunPod/02-Product-Components.md) | _Secure Cloud vs Community Cloud, Pods, Serverless +3 more_ |
+| 3 | [RunPod Python SDK](RunPod/03-Python-SDK.md) | _Installation and Setup, Handler Pattern — `runpod.serverless.start()`, Async Handler +7 more_ |
+| 4 | [GPU Selection Guide](RunPod/04-GPU-Selection-Guide.md) | _Full GPU Catalog, VRAM Requirements by Model Size and Precision, GPU-to-Model Matching +5 more_ |
+| 5 | [Serverless Deep Dive](RunPod/05-Serverless-Deep-Dive.md) | _Worker Lifecycle States, Worker Configuration, FlashBoot +8 more_ |
+| 6 | [Model-GPU Interaction](RunPod/06-Model-GPU-Interaction.md) | _VRAM Formula, Two Phases of Inference, Memory Bandwidth Table and Impact on Decode +5 more_ |
+| 7 | [Python Code Patterns](RunPod/07-Python-Code-Patterns.md) | _Complete Serverless Handler — Model at Module Level, OOM-Safe Handler with Recovery, Streaming Handler — TextIteratorStreamer + Background Thread +9 more_ |
+| 8 | [Engineering Decisions](RunPod/08-Engineering-Decisions.md) | _Pods vs Serverless vs Bare GPU, When to Use Pods, When to Use Serverless +5 more_ |
+| 9 | [Debugging and Pitfalls](RunPod/09-Debugging-And-Pitfalls.md) | _OOM Crashes, Cold Start Too Slow, Spot Pod Interruption +8 more_ |
+
 ---
 
 ## Learning Log
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
+| 2026-03-18 03:55 UTC | root | AI Learning Repository — Claude Context | Added/Updated |
 | 2026-03-17 13:39 UTC | AI-Infrastructure | The GPU: The "Factory Floor" of AI | Added/Updated |
 | 2026-03-17 13:39 UTC | AI-Infrastructure | Model Architecture & Loading Flow | Added/Updated |
 | 2026-03-17 13:39 UTC | AI-Infrastructure | RunPod Infrastructure: Pods vs. Serverless | Added/Updated |
