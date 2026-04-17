@@ -1,7 +1,7 @@
 # AI Learning Repository
 
-> Auto-generated index. Last updated: 2026-04-14 02:45 UTC
-> 9 topic(s) · 43 subtopic file(s)
+> Auto-generated index. Last updated: 2026-04-09 03:11 UTC
+> 4 topic(s) · 34 subtopic file(s)
 
 ---
 
@@ -34,16 +34,6 @@
 | 10 | [Production and Observability](Agentic-AI/10-Production-and-Observability.md) | _LangSmith Tracing, Key Metrics to Monitor, Cost Management +5 more_ |
 | 11 | [Interview Prep](Agentic-AI/11-Interview-Prep.md) | _Concept Questions, System Design Questions, Coding Challenges +4 more_ |
 
-### Bedrock
-
-| # | Subtopic | Covers |
-|---|----------|--------|
-| 1 | [AWS Bedrock — Foundation Models as a Service](Bedrock/01-AWS-Bedrock-Guide.md) | _Mental Model, Bedrock Core APIs, Bedrock Guardrails +4 more_ |
-| 2 | [AWS Bedrock AgentCore — Production Agent Infrastructure](Bedrock/02-AWS-Bedrock-AgentCore.md) | _Mental Model, Architecture, Session Model +16 more_ |
-| 3 | [Strands Agents SDK — Model-Driven AI Agents Framework](Bedrock/03-Strands-Agents-SDK.md) | _Core Architecture, Memory System (Auto-Managed), Tool System (20+ Built-in) +11 more_ |
-| 4 | [AI Agent Frameworks Comparison — Interview Deep Dive](Bedrock/04-Agent-Frameworks-Comparison.md) | _The Three Production Frameworks You Need to Know, Side-by-Side Comparison, When to Use Each (Decision Tree) +6 more_ |
-| 5 | [Bedrock Invoke Functions & Streaming — Complete Reference](Bedrock/05-Invoke-Functions-and-Streaming.md) | _Decision Tree: Which Invoke Function?, 1. invoke_model — Synchronous One-Shot, 2. invoke_model_with_response_stream — Streaming One-Shot +11 more_ |
-
 ### FastAPI
 
 | # | Subtopic | Covers |
@@ -54,24 +44,6 @@
 | 4 | [FastAPI: Connecting to a Frontend](FastAPI/04-Frontend-Integration.md) | _CORS, How a JS/React Frontend Calls FastAPI, Gradio / Streamlit Frontends +3 more_ |
 | 5 | [FastAPI: Backend Management and Serverless Deployment](FastAPI/05-Serverless-And-RunPod.md) | _FastAPI on RunPod Pods (Always-On), Model Loading at Startup — Lifespan Pattern, Passing State to Routes +4 more_ |
 | 6 | [FastAPI vs Flask: Detailed Comparison](FastAPI/06-FastAPI-vs-Flask.md) | _Architecture, Performance, Type System +6 more_ |
-
-### Financial AI Compliance
-
-| # | Subtopic | Covers |
-|---|----------|--------|
-| 1 | [AI in Financial Services — Compliance, Risk, and Patterns](Financial-AI-Compliance/01-AI-in-Financial-Services.md) | _The Compliance Landscape, PII in LLM Pipelines — Detection & Redaction, Audit Logging — The Compliance Trail +5 more_ |
-
-### Prompt Engineering
-
-| # | Subtopic | Covers |
-|---|----------|--------|
-| 1 | [Prompt Engineering — From Basics to Production](Prompt-Engineering/01-Prompt-Engineering.md) | _Core Mental Model, Prompt Anatomy, SYSTEM PROMPT (who are you + guardrails) +8 more_ |
-
-### RAG Architecture
-
-| # | Subtopic | Covers |
-|---|----------|--------|
-| 1 | [RAG (Retrieval-Augmented Generation) — From Basics to Production](RAG-Architecture/01-RAG-Core-Patterns.md) | _The Core Formula, RAG Workflow — 5 Stages, Advanced RAG Patterns +2 more_ |
 
 ### RunPod
 
@@ -89,28 +61,22 @@
 | 10 | [RunPod Serverless Codebase Reference](RunPod/10-Serverless-Codebase-Reference.md) | _`FluxPipeline` and `pipe`, `torch` role in the handler, `torch.Generator` and deterministic generation +7 more_ |
 | 11 | [ML Infrastructure Fundamentals](RunPod/11-ML-Infrastructure-Fundamentals.md) | _Why GPU over CPU, GPU hardware components, SIMD architecture +11 more_ |
 
-### Vector Databases
-
-| # | Subtopic | Covers |
-|---|----------|--------|
-| 1 | [Vector Databases — Choosing and Using at Scale](Vector-Databases/01-Vector-DB-Guide.md) | _Why Vector DB, Not Regular DB?, Core Concepts, Vector Database Comparison +5 more_ |
-
 ---
 
 ## Learning Log
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
-| 2026-04-14 02:45 UTC | AI-Infrastructure | The GPU: The "Factory Floor" of AI | Added/Updated |
-| 2026-04-14 02:45 UTC | AI-Infrastructure | Model Architecture & Loading Flow | Added/Updated |
-| 2026-04-14 02:45 UTC | AI-Infrastructure | RunPod Infrastructure: Pods vs. Serverless | Added/Updated |
-| 2026-04-14 02:45 UTC | AI-Infrastructure | Resource Optimization | Added/Updated |
-| 2026-04-14 02:45 UTC | AI-Infrastructure | Hybrid Training Workflow: Mac Mini + RunPod | Added/Updated |
-| 2026-04-14 02:45 UTC | AI-Infrastructure | The Framework Handshake | Added/Updated |
-| 2026-04-14 02:45 UTC | Agentic-AI | What Are AI Agents | Added/Updated |
-| 2026-04-14 02:45 UTC | Agentic-AI | Agent Architecture and Mental Model | Added/Updated |
-| 2026-04-14 02:45 UTC | Agentic-AI | LLM vs Agentic AI | Added/Updated |
-| 2026-04-14 02:45 UTC | Agentic-AI | Tools and Tool-Calling | Added/Updated |
+| 2026-04-09 03:11 UTC | AI-Infrastructure | The GPU: The "Factory Floor" of AI | Added/Updated |
+| 2026-04-09 03:11 UTC | AI-Infrastructure | Model Architecture & Loading Flow | Added/Updated |
+| 2026-04-09 03:11 UTC | AI-Infrastructure | RunPod Infrastructure: Pods vs. Serverless | Added/Updated |
+| 2026-04-09 03:11 UTC | AI-Infrastructure | Resource Optimization | Added/Updated |
+| 2026-04-09 03:11 UTC | AI-Infrastructure | Hybrid Training Workflow: Mac Mini + RunPod | Added/Updated |
+| 2026-04-09 03:11 UTC | AI-Infrastructure | The Framework Handshake | Added/Updated |
+| 2026-04-09 03:11 UTC | Agentic-AI | What Are AI Agents | Added/Updated |
+| 2026-04-09 03:11 UTC | Agentic-AI | Agent Architecture and Mental Model | Added/Updated |
+| 2026-04-09 03:11 UTC | Agentic-AI | LLM vs Agentic AI | Added/Updated |
+| 2026-04-09 03:11 UTC | Agentic-AI | Tools and Tool-Calling | Added/Updated |
 
 ---
 
