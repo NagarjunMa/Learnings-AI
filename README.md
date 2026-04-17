@@ -1,6 +1,6 @@
 # AI Learning Repository
 
-> Auto-generated index. Last updated: 2026-04-14 02:45 UTC
+> Auto-generated index. Last updated: 2026-04-17 20:01 UTC
 > 9 topic(s) · 43 subtopic file(s)
 
 ---
@@ -101,16 +101,16 @@
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
-| 2026-04-14 02:45 UTC | AI-Infrastructure | The GPU: The "Factory Floor" of AI | Added/Updated |
-| 2026-04-14 02:45 UTC | AI-Infrastructure | Model Architecture & Loading Flow | Added/Updated |
-| 2026-04-14 02:45 UTC | AI-Infrastructure | RunPod Infrastructure: Pods vs. Serverless | Added/Updated |
-| 2026-04-14 02:45 UTC | AI-Infrastructure | Resource Optimization | Added/Updated |
-| 2026-04-14 02:45 UTC | AI-Infrastructure | Hybrid Training Workflow: Mac Mini + RunPod | Added/Updated |
-| 2026-04-14 02:45 UTC | AI-Infrastructure | The Framework Handshake | Added/Updated |
-| 2026-04-14 02:45 UTC | Agentic-AI | What Are AI Agents | Added/Updated |
-| 2026-04-14 02:45 UTC | Agentic-AI | Agent Architecture and Mental Model | Added/Updated |
-| 2026-04-14 02:45 UTC | Agentic-AI | LLM vs Agentic AI | Added/Updated |
-| 2026-04-14 02:45 UTC | Agentic-AI | Tools and Tool-Calling | Added/Updated |
+| 2026-04-17 20:01 UTC | root | AI Learning Repository | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | What Are AI Agents | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Agent Architecture and Mental Model | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | LLM vs Agentic AI | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Tools and Tool-Calling | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Memory and State in Agents | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Planning and Reasoning | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | LangChain Core | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | LangGraph Core | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Multi-Agent Systems | Added/Updated |
 
 ---
 

@@ -2,6 +2,28 @@
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
+| 2026-04-17 20:01 UTC | root | AI Learning Repository | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | What Are AI Agents | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Agent Architecture and Mental Model | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | LLM vs Agentic AI | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Tools and Tool-Calling | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Memory and State in Agents | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Planning and Reasoning | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | LangChain Core | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | LangGraph Core | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Multi-Agent Systems | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Production and Observability | Added/Updated |
+| 2026-04-17 20:01 UTC | Agentic-AI | Interview Prep | Added/Updated |
+| 2026-04-17 20:01 UTC | Bedrock | AWS Bedrock — Foundation Models as a Service | Added/Updated |
+| 2026-04-17 20:01 UTC | Bedrock | AWS Bedrock AgentCore — Production Agent Infrastructure | Added/Updated |
+| 2026-04-17 20:01 UTC | Bedrock | Strands Agents SDK — Model-Driven AI Agents Framework | Added/Updated |
+| 2026-04-17 20:01 UTC | Bedrock | AI Agent Frameworks Comparison — Interview Deep Dive | Added/Updated |
+| 2026-04-17 20:01 UTC | Bedrock | Bedrock Invoke Functions & Streaming — Complete Reference | Added/Updated |
+| 2026-04-17 20:01 UTC | Financial-AI-Compliance | AI in Financial Services — Compliance, Risk, and Patterns | Added/Updated |
+| 2026-04-17 20:01 UTC | Prompt-Engineering | Prompt Engineering — From Basics to Production | Added/Updated |
+| 2026-04-17 20:01 UTC | RAG-Architecture | RAG (Retrieval-Augmented Generation) — From Basics to Production | Added/Updated |
+| 2026-04-17 20:01 UTC | Vector-Databases | Vector Databases — Choosing and Using at Scale | Added/Updated |
+| 2026-04-17 20:01 UTC | root | CLAUDE.md & AI Context Files: Complete Guide | Added/Updated |
 | 2026-04-14 02:45 UTC | AI-Infrastructure | The GPU: The "Factory Floor" of AI | Added/Updated |
 | 2026-04-14 02:45 UTC | AI-Infrastructure | Model Architecture & Loading Flow | Added/Updated |
 | 2026-04-14 02:45 UTC | AI-Infrastructure | RunPod Infrastructure: Pods vs. Serverless | Added/Updated |
