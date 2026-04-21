@@ -2,6 +2,8 @@
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
+| 2026-04-21 20:17 UTC | Agentic-AI | LangChain Core | Added/Updated |
+| 2026-04-21 20:17 UTC | Agentic-AI | LangGraph Core | Added/Updated |
 | 2026-04-21 15:46 UTC | Prompt-Engineering | Reasoning Techniques — CoT, Self-Consistency, Generate Knowledge, Least-to-Most | Added/Updated |
 | 2026-04-21 15:46 UTC | Prompt-Engineering | Agent Frameworks — ReAct, Tree of Thoughts, Reflexion, PAL | Added/Updated |
 | 2026-04-21 15:46 UTC | Prompt-Engineering | Advanced Structural Techniques — Chaining, SoT, XML, Context Management | Added/Updated |

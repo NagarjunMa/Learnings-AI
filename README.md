@@ -1,6 +1,6 @@
 # AI Learning Repository
 
-> Auto-generated index. Last updated: 2026-04-21 15:46 UTC
+> Auto-generated index. Last updated: 2026-04-21 20:17 UTC
 > 9 topic(s) · 49 subtopic file(s)
 
 ---
@@ -28,8 +28,8 @@
 | 4 | [Tools and Tool-Calling](Agentic-AI/04-Tools-and-Tool-Calling.md) | _What Is a Tool?, Tool-Calling Protocol: How It Works, Tool Categories +6 more_ |
 | 5 | [Memory and State in Agents](Agentic-AI/05-Memory-and-State.md) | _Four Types of Agent Memory, In-Context Memory, Sliding Window Strategy +8 more_ |
 | 6 | [Planning and Reasoning](Agentic-AI/06-Planning-and-Reasoning.md) | _ReAct Pattern (Reasoning + Acting), Chain-of-Thought vs ReAct vs Plan-and-Execute, Tree-of-Thought: Branching Reasoning +7 more_ |
-| 7 | [LangChain Core](Agentic-AI/07-LangChain-Core.md) | _Core Abstractions, LCEL: LangChain Expression Language, Building a ReAct Agent +9 more_ |
-| 8 | [LangGraph Core](Agentic-AI/08-LangGraph-Core.md) | _What LangGraph Adds Over LangChain, Core Concepts, Full Working LangGraph Agent +9 more_ |
+| 7 | [LangChain Core](Agentic-AI/07-LangChain-Core.md) | _Core Abstractions, LCEL: LangChain Expression Language, Building a ReAct Agent +10 more_ |
+| 8 | [LangGraph Core](Agentic-AI/08-LangGraph-Core.md) | _What LangGraph Adds Over LangChain, Core Concepts, Full Working LangGraph Agent +10 more_ |
 | 9 | [Multi-Agent Systems](Agentic-AI/09-Multi-Agent-Systems.md) | _Core Patterns, Supervisor Pattern (Most Common), Swarm Pattern +7 more_ |
 | 10 | [Production and Observability](Agentic-AI/10-Production-and-Observability.md) | _LangSmith Tracing, Key Metrics to Monitor, Cost Management +5 more_ |
 | 11 | [Interview Prep](Agentic-AI/11-Interview-Prep.md) | _Concept Questions, System Design Questions, Coding Challenges +4 more_ |
@@ -107,6 +107,8 @@
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
+| 2026-04-21 20:17 UTC | Agentic-AI | LangChain Core | Added/Updated |
+| 2026-04-21 20:17 UTC | Agentic-AI | LangGraph Core | Added/Updated |
 | 2026-04-21 15:46 UTC | Prompt-Engineering | Reasoning Techniques — CoT, Self-Consistency, Generate Knowledge, Least-to-Most | Added/Updated |
 | 2026-04-21 15:46 UTC | Prompt-Engineering | Agent Frameworks — ReAct, Tree of Thoughts, Reflexion, PAL | Added/Updated |
 | 2026-04-21 15:46 UTC | Prompt-Engineering | Advanced Structural Techniques — Chaining, SoT, XML, Context Management | Added/Updated |
@@ -115,8 +117,6 @@
 | 2026-04-21 15:46 UTC | Prompt-Engineering | Security and Adversarial Prompting — Injection, Jailbreaking, Defenses | Added/Updated |
 | 2026-04-17 20:01 UTC | root | AI Learning Repository | Added/Updated |
 | 2026-04-17 20:01 UTC | Agentic-AI | What Are AI Agents | Added/Updated |
-| 2026-04-17 20:01 UTC | Agentic-AI | Agent Architecture and Mental Model | Added/Updated |
-| 2026-04-17 20:01 UTC | Agentic-AI | LLM vs Agentic AI | Added/Updated |
 
 ---
 
