@@ -76,7 +76,7 @@ This pattern forces transparency. The LLM's reasoning is visible at each step, a
 
 ## Context Window as a Constraint
 
-The agent's context window is finite. As the loop continues, the message history grows:
+The agent’s context window is finite. As the loop continues, the message history grows:
 
 ```
 ┌─ Initial context: 128K tokens available
