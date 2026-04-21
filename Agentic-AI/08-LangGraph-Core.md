@@ -360,6 +360,105 @@ for event in agent.stream(initial_state, config=config):
 # Useful for real-time updates (show user what agent is thinking)
 ```
 
+## Prebuilt Agent (create_react_agent)
+
+Most engineers use `langgraph.prebuilt.create_react_agent` instead of building StateGraph manually for simple tool-calling agents.
+
+### One-Line Agent Creation
+
+```python
+from langgraph.prebuilt import create_react_agent
+from langgraph.checkpoint.memory import MemorySaver
+from langchain_anthropic import ChatAnthropic
+from langchain_core.tools import tool
+
+# Define tools
+@tool
+def search(query: str) -> str:
+    """Search for information."""
+    return f"Results for: {query}"
+
+@tool
+def calculate(expression: str) -> str:
+    """Calculate math expression."""
+    return str(eval(expression))
+
+llm = ChatAnthropic(model="claude-3-5-sonnet-20241022")
+tools = [search, calculate]
+
+# One line — no manual StateGraph, nodes, edges needed
+agent = create_react_agent(
+    model=llm,
+    tools=tools,
+    checkpointer=MemorySaver()  # Optional: enable persistence
+)
+
+# Run
+result = agent.invoke(
+    {"messages": [{"role": "user", "content": "What is 25 * 48?"}]},
+    config={"configurable": {"thread_id": "session-1"}}
+)
+
+print(result["messages"][-1].content)  # Output: "25 * 48 = 1200"
+```
+
+### What's Inside: MessagesState
+
+`create_react_agent` uses `MessagesState` internally:
+
+```python
+from langgraph.graph import MessagesState
+from typing_extensions import Annotated
+from operator import add
+
+# MessagesState is roughly:
+class MessagesState(TypedDict):
+    messages: Annotated[list, add_messages]  # Appends new messages, doesn't overwrite
+
+# add_messages reducer automatically merges new messages into history
+# This prevents the "replace entire message list" problem of manual state
+
+# That's why agent.invoke() works with {"messages": [...]}
+# and result["messages"] contains full conversation history
+```
+
+### When to Use Prebuilt vs Manual StateGraph
+
+| Scenario | Use Prebuilt | Use Manual StateGraph |
+|---|---|---|
+| **Simple tool-calling agent** | ✅ Yes | ❌ Overkill |
+| **Agent with 2-3 tools, no special routing** | ✅ Yes | ❌ Overkill |
+| **Agent that needs custom nodes** | ❌ No | ✅ Yes |
+| **Multi-step workflow with custom logic** | ❌ No | ✅ Yes |
+| **Non-message state** (custom TypedDict) | ❌ No | ✅ Yes |
+| **Conditional routing based on state** | ❌ Limited | ✅ Yes |
+| **Rapid prototype** | ✅ Yes | ❌ Too verbose |
+| **Production system with complex logic** | ❌ No | ✅ Yes |
+
+### Prebuilt + Custom Routing
+
+You can use prebuilt agent but customize routing:
+
+```python
+from langgraph.prebuilt import create_react_agent
+from langgraph.graph import StateGraph
+
+# Create base agent
+agent = create_react_agent(llm, tools, checkpointer=MemorySaver())
+
+# Wrap in custom StateGraph if you need special handling
+# (Most cases don't need this — prebuilt is enough)
+
+# Example: Add logging around agent
+def logged_agent_wrapper(state):
+    print(f"Calling agent with {len(state['messages'])} messages")
+    result = agent.invoke(state)
+    print(f"Agent returned {len(result['messages'])} messages")
+    return result
+```
+
+---
+
 ## Key Differences: LangGraph vs LangChain Agent
 
 | Aspect               | LangChain Agent           | LangGraph                 |

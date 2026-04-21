@@ -240,6 +240,105 @@ from langchain.agents import create_tool_calling_agent
 agent = create_tool_calling_agent(llm, tools, prompt_template)
 ```
 
+## Modern Tool Creation (Preferred Pattern)
+
+Modern LangChain uses decorators and Pydantic for cleaner tool definition.
+
+### 1. @tool Decorator (Simplest)
+
+```python
+from langchain_core.tools import tool
+
+@tool
+def search_stations(location: str, radius_km: int = 10) -> str:
+    """Search for EV charging stations near a location.
+    
+    Args:
+        location: City or address to search near
+        radius_km: Search radius in kilometers
+    """
+    return f"Found 5 stations within {radius_km}km of {location}"
+
+# Tool automatically extracts:
+# - name: "search_stations" (function name)
+# - description: docstring
+# - args_schema: Pydantic from type hints
+
+print(search_stations.name)           # "search_stations"
+print(search_stations.description)    # Full docstring
+print(search_stations.args_schema)    # Pydantic schema
+
+# Use in agent
+agent = create_react_agent(llm, [search_stations], prompt)
+```
+
+### 2. StructuredTool (Complex Pydantic Schema)
+
+For agents with complex input validation:
+
+```python
+from langchain_core.tools import StructuredTool
+from pydantic import BaseModel, Field
+
+class StationSearchInput(BaseModel):
+    location: str = Field(description="City or coordinates")
+    radius_km: int = Field(default=10, description="Search radius in km")
+    connector_type: str = Field(default="any", description="Charger type (Tesla, CCS, etc)")
+    max_price_kwh: float = Field(default=999.0, description="Max price per kWh")
+
+def search_stations_impl(location: str, radius_km: int, connector_type: str, max_price_kwh: float) -> str:
+    # Implementation queries DB with all constraints
+    return f"Found stations near {location} with {connector_type} under ${max_price_kwh}/kWh"
+
+search_tool = StructuredTool.from_function(
+    func=search_stations_impl,
+    name="search_stations",
+    description="Search EV charging stations with filters",
+    args_schema=StationSearchInput  # Enforce input validation
+)
+
+# LLM will only call this with valid inputs
+agent = create_react_agent(llm, [search_tool], prompt)
+```
+
+**Why StructuredTool matters:** Agent receives structured params (location, connector_type, price), not a string to parse. Prevents hallucination of invalid inputs.
+
+### 3. PydanticOutputParser (Structured Responses)
+
+Force LLM to return structured JSON matching a schema:
+
+```python
+from langchain_core.output_parsers import PydanticOutputParser
+from langchain_core.prompts import PromptTemplate
+from pydantic import BaseModel
+
+class StationRecommendation(BaseModel):
+    station_name: str
+    distance_km: float
+    price_per_kwh: float
+    reasoning: str
+
+parser = PydanticOutputParser(pydantic_object=StationRecommendation)
+
+# Parser auto-generates format instructions
+prompt = PromptTemplate(
+    template="Recommend best charging station.\n{format_instructions}\nQuery: {user_query}",
+    input_variables=["user_query"],
+    partial_variables={"format_instructions": parser.get_format_instructions()}
+)
+
+chain = prompt | llm | parser
+
+result = chain.invoke({"user_query": "Fast charger, under $2, 10km away"})
+print(result.station_name)      # "Station A" (validated string)
+print(result.price_per_kwh)     # 1.80 (validated float)
+print(type(result))              # <class 'StationRecommendation'> (Pydantic model)
+```
+
+**Why this matters in production:** Parser validates JSON before returning. No parsing errors. Type-safe.
+
+---
+
 ## Common Patterns
 
 ### Pattern 1: Simple Question → Answer
