@@ -2,6 +2,12 @@
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Reasoning Techniques — CoT, Self-Consistency, Generate Knowledge, Least-to-Most | Added/Updated |
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Agent Frameworks — ReAct, Tree of Thoughts, Reflexion, PAL | Added/Updated |
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Advanced Structural Techniques — Chaining, SoT, XML, Context Management | Added/Updated |
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Meta-Prompting and Automated Prompt Engineering | Added/Updated |
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Provider Playbook — Claude, OpenAI, Gemini | Added/Updated |
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Security and Adversarial Prompting — Injection, Jailbreaking, Defenses | Added/Updated |
 | 2026-04-17 20:01 UTC | root | AI Learning Repository | Added/Updated |
 | 2026-04-17 20:01 UTC | Agentic-AI | What Are AI Agents | Added/Updated |
 | 2026-04-17 20:01 UTC | Agentic-AI | Agent Architecture and Mental Model | Added/Updated |

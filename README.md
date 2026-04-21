@@ -1,7 +1,7 @@
 # AI Learning Repository
 
-> Auto-generated index. Last updated: 2026-04-17 20:01 UTC
-> 9 topic(s) · 43 subtopic file(s)
+> Auto-generated index. Last updated: 2026-04-21 15:46 UTC
+> 9 topic(s) · 49 subtopic file(s)
 
 ---
 
@@ -66,6 +66,12 @@
 | # | Subtopic | Covers |
 |---|----------|--------|
 | 1 | [Prompt Engineering — From Basics to Production](Prompt-Engineering/01-Prompt-Engineering.md) | _Core Mental Model, Prompt Anatomy, SYSTEM PROMPT (who are you + guardrails) +8 more_ |
+| 2 | [Reasoning Techniques — CoT, Self-Consistency, Generate Knowledge, Least-to-Most](Prompt-Engineering/02-Reasoning-Techniques.md) | _Zero-Shot Chain-of-Thought (CoT), Few-Shot Chain-of-Thought, Auto-CoT (Automatic Chain-of-Thought) +6 more_ |
+| 3 | [Agent Frameworks — ReAct, Tree of Thoughts, Reflexion, PAL](Prompt-Engineering/03-Agent-Frameworks.md) | _ReAct (Reason + Act), Tree of Thoughts (ToT), Reflexion +3 more_ |
+| 4 | [Advanced Structural Techniques — Chaining, SoT, XML, Context Management](Prompt-Engineering/04-Advanced-Structural.md) | _Prompt Chaining, Skeleton-of-Thought (SoT), XML / Structured Prompt Architecture +3 more_ |
+| 5 | [Meta-Prompting and Automated Prompt Engineering](Prompt-Engineering/05-Meta-and-Automation.md) | _Meta-Prompting, Automatic Prompt Engineer (APE), DSPy — Stanford's Automated Prompt Framework +4 more_ |
+| 6 | [Provider Playbook — Claude, OpenAI, Gemini](Prompt-Engineering/06-Provider-Playbook.md) | _Claude (Anthropic), OpenAI (GPT series), Google Gemini +6 more_ |
+| 7 | [Security and Adversarial Prompting — Injection, Jailbreaking, Defenses](Prompt-Engineering/07-Security-and-Adversarial.md) | _Prompt Injection, Jailbreaking, Defenses +5 more_ |
 
 ### RAG Architecture
 
@@ -101,16 +107,16 @@
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Reasoning Techniques — CoT, Self-Consistency, Generate Knowledge, Least-to-Most | Added/Updated |
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Agent Frameworks — ReAct, Tree of Thoughts, Reflexion, PAL | Added/Updated |
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Advanced Structural Techniques — Chaining, SoT, XML, Context Management | Added/Updated |
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Meta-Prompting and Automated Prompt Engineering | Added/Updated |
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Provider Playbook — Claude, OpenAI, Gemini | Added/Updated |
+| 2026-04-21 15:46 UTC | Prompt-Engineering | Security and Adversarial Prompting — Injection, Jailbreaking, Defenses | Added/Updated |
 | 2026-04-17 20:01 UTC | root | AI Learning Repository | Added/Updated |
 | 2026-04-17 20:01 UTC | Agentic-AI | What Are AI Agents | Added/Updated |
 | 2026-04-17 20:01 UTC | Agentic-AI | Agent Architecture and Mental Model | Added/Updated |
 | 2026-04-17 20:01 UTC | Agentic-AI | LLM vs Agentic AI | Added/Updated |
-| 2026-04-17 20:01 UTC | Agentic-AI | Tools and Tool-Calling | Added/Updated |
-| 2026-04-17 20:01 UTC | Agentic-AI | Memory and State in Agents | Added/Updated |
-| 2026-04-17 20:01 UTC | Agentic-AI | Planning and Reasoning | Added/Updated |
-| 2026-04-17 20:01 UTC | Agentic-AI | LangChain Core | Added/Updated |
-| 2026-04-17 20:01 UTC | Agentic-AI | LangGraph Core | Added/Updated |
-| 2026-04-17 20:01 UTC | Agentic-AI | Multi-Agent Systems | Added/Updated |
 
 ---
 
