@@ -2,6 +2,44 @@
 
 | Date (UTC) | Topic | Subtopic | Action |
 |---|---|---|---|
+| 2026-05-11 01:03 UTC | AI-Agents-Google-ADK | Introduction to Agents — Google White Paper Notes | Added/Updated |
+| 2026-05-11 01:03 UTC | AI-Agents-Google-ADK | Agent Tools & Interoperability with Model Context Protocol (MCP) | Added/Updated |
+| 2026-05-11 01:03 UTC | AI-Agents-Google-ADK | Context Engineering: Sessions & Memory | Added/Updated |
+| 2026-05-11 01:03 UTC | AI-Agents-Google-ADK | Agent Quality: Observability, Logging, Tracing, Evaluation, Metrics | Added/Updated |
+| 2026-05-11 01:03 UTC | AI-Agents-Google-ADK | Prototype to Production: AgentOps Lifecycle | Added/Updated |
+| 2026-05-11 01:03 UTC | Agentic-AI | Agent Architecture and Mental Model | Added/Updated |
+| 2026-05-11 01:03 UTC | Agentic-AI | Context Management Advanced: Context Rot, Compression, Production Strategies | Added/Updated |
+| 2026-05-11 01:03 UTC | Agentic-AI | LangChain & LangGraph Production: API Versioning, Stability, Design Patterns | Added/Updated |
+| 2026-05-11 01:03 UTC | Agentic-AI | Model Context Protocol (MCP) — USB-C for AI | Added/Updated |
+| 2026-05-11 01:03 UTC | Bedrock | Strands Agents SDK — Model-Driven AI Agents Framework | Added/Updated |
+| 2026-05-11 01:03 UTC | Bedrock | Bedrock Invoke Functions & Streaming — Complete Reference | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | FastAPI: Overview and Core Concepts | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | FastAPI: Request and Response Handling | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | APIRouter and Project Structure | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | Pydantic v2 Advanced | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | Testing FastAPI Applications | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | Database Integration — SQLAlchemy Async | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | Exception Handling and Error Patterns | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | Settings and Configuration Management | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | Logging and Observability | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | Advanced Security and Rate Limiting | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | Performance and Optimization | Added/Updated |
+| 2026-05-11 01:03 UTC | FastAPI | OpenAPI Customization | Added/Updated |
+| 2026-05-11 01:03 UTC | In-detailed | Fine-Tuning: Complete Guide for Production | Added/Updated |
+| 2026-05-11 01:03 UTC | In-detailed | Model Evaluation Framework: Metrics, Statistical Methods, Best Practices | Added/Updated |
+| 2026-05-11 01:03 UTC | In-detailed | Full-Stack Patterns: Persistence, Databases, Production Deployment | Added/Updated |
+| 2026-05-11 01:03 UTC | In-detailed | Prompt Versioning and A/B Testing: Strategies and Best Practices | Added/Updated |
+| 2026-05-11 01:03 UTC | In-detailed | Production Deep-Dive: Dual-Sided EV Charging Marketplace Chatbot | Added/Updated |
+| 2026-05-11 01:03 UTC | In-detailed | Geographic-Aware Vector Search: ReAct Loop + Distance Filtering | Added/Updated |
+| 2026-05-11 01:03 UTC | In-detailed | AWS Bedrock AgentCore — Complete Mastery Deep-Dive | Added/Updated |
+| 2026-05-11 01:03 UTC | In-detailed | Strands Agents SDK — Complete Mastery Deep-Dive | Added/Updated |
+| 2026-05-11 01:03 UTC | In-detailed | Agentic RAG — Complete Mastery Deep-Dive | Added/Updated |
+| 2026-05-11 01:03 UTC | In-detailed | RAG Evals — Comprehensive Framework | Added/Updated |
+| 2026-05-11 01:03 UTC | In-detailed | Interview Readiness Assessment | Added/Updated |
+| 2026-05-11 01:03 UTC | Prompt-Engineering | Security and Adversarial Prompting — Injection, Jailbreaking, Defenses | Added/Updated |
+| 2026-05-11 01:03 UTC | RAG-Architecture | RAG (Retrieval-Augmented Generation) — From Basics to Production | Added/Updated |
+| 2026-05-11 01:03 UTC | RAG-Architecture | Advanced RAG — Agentic RAG, Corrective RAG, GraphRAG, vs Fine-Tuning | Added/Updated |
+| 2026-05-11 01:03 UTC | Vector-Databases | Vector Database Internals: Semantic Storage, Indexing, and Quantization | Added/Updated |
 | 2026-04-21 15:46 UTC | Prompt-Engineering | Reasoning Techniques — CoT, Self-Consistency, Generate Knowledge, Least-to-Most | Added/Updated |
 | 2026-04-21 15:46 UTC | Prompt-Engineering | Agent Frameworks — ReAct, Tree of Thoughts, Reflexion, PAL | Added/Updated |
 | 2026-04-21 15:46 UTC | Prompt-Engineering | Advanced Structural Techniques — Chaining, SoT, XML, Context Management | Added/Updated |
