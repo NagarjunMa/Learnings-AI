@@ -185,3 +185,50 @@ app.add_middleware(TimingMiddleware)
 ```
 
 Middleware order: added last → runs first (LIFO).
+
+## Server-Sent Events (SSE)
+
+SSE streams a sequence of events over a single HTTP connection. Client reads with `EventSource` API. Simpler than WebSockets for one-directional streams (LLM token output).
+
+```python
+import asyncio
+from fastapi import FastAPI
+from fastapi.responses import StreamingResponse
+
+async def token_stream(prompt: str):
+    """Async generator that yields SSE-formatted chunks."""
+    tokens = ["Hello", " world", "! ", "Here", " are", " your", " tokens."]
+    for token in tokens:
+        yield f"data: {token}\n\n"   # SSE format: "data: <content>\n\n"
+        await asyncio.sleep(0.05)    # simulate LLM generation delay
+    yield "data: [DONE]\n\n"         # terminal sentinel
+
+@app.post("/stream/generate")
+async def stream_generate(req: GenerateRequest):
+    return StreamingResponse(
+        token_stream(req.prompt),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",  # disable nginx buffering
+        },
+    )
+```
+
+**SSE event format:**
+```
+data: token text here\n\n          # simple text
+event: custom_type\ndata: {...}\n\n # named event with JSON data
+id: 42\ndata: hello\n\n            # with event ID for reconnect
+```
+
+**JavaScript client:**
+```javascript
+const es = new EventSource("/stream/generate", { method: "POST" });
+es.onmessage = (e) => {
+    if (e.data === "[DONE]") { es.close(); return; }
+    appendToken(e.data);
+};
+```
+
+**SSE vs WebSockets**: SSE is one-directional (server → client), auto-reconnects, works over standard HTTP. WebSockets are bidirectional but require upgrade. For LLM streaming output, SSE is simpler and sufficient.

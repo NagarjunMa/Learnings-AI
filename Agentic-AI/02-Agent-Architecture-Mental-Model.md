@@ -152,3 +152,155 @@ LangGraph makes this explicit. You define states, nodes (functions), and edges (
 **3. Hallucinated tool calls**: LLM invents tools that don't exist. Mitigation: strict tool schema validation, guardrails.
 **4. Slow response time**: Multiple loops take 10-30 seconds. Mitigation: parallel tool execution, caching.
 **5. Tool ordering matters**: If you define tools in wrong order, LLM uses wrong one. Mitigation: sorted tool list, clear descriptions.
+
+---
+
+## Single-Agent vs Multi-Agent Architecture
+
+This section explicitly frames the architecture described above (**Single-Agent**) in contrast to multi-agent systems.
+
+### Single-Agent Architecture
+
+**Definition:** One LLM instance + tools + memory handles the entire pipeline from perception to output.
+
+```
+User Query
+    ↓
+┌─────────────────────────────────┐
+│   Single Agent                  │
+│  ┌─────────────────────────────┐│
+│  │ LLM (planning + reasoning)  ││
+│  └─────────────────────────────┘│
+│  ┌─────────────────────────────┐│
+│  │ Tools (search, code, API)   ││
+│  └─────────────────────────────┘│
+│  ┌─────────────────────────────┐│
+│  │ Memory (context window)     ││
+│  └─────────────────────────────┘│
+└─────────────────────────────────┘
+    ↓
+Final Answer
+```
+
+**Key characteristics:**
+- **One LLM instance** makes all decisions (what to search, how to interpret results)
+- **Agent is both user and architect of context** (decides what information to keep in context)
+- **Linear reasoning** within the 6-layer stack (perception → planning → tool selection → execution → memory → output)
+- **Simple failure modes** (if agent fails, one point of failure)
+
+**When to use single-agent:**
+- Simple tasks (Q&A, summarization, single-domain lookup)
+- Low complexity (1-3 tool calls per query)
+- Single domain of expertise (search expert, or code expert, not both)
+- Cost-sensitive (one LLM call per query, no multi-agent overhead)
+- Quick turnaround (3-5 seconds OK, parallelization not needed)
+
+**Example single-agent task:**
+```
+User: "Who was the first CEO of OpenAI?"
+→ Agent sees the query
+→ Decides: I need to search
+→ Calls web_search tool
+→ Gets result
+→ Returns answer
+(One agent, one domain of expertise: search)
+```
+
+### Multi-Agent Architecture
+
+**Definition:** Multiple specialized agents work together, each with expertise in one domain. A coordinator routes tasks between them.
+
+```
+User Query
+    ↓
+┌────────────────────────────────────────┐
+│  Coordinator Agent                     │
+│  (decides which agent to call)         │
+└─────────────┬──────────────────────────┘
+              ↓
+    ┌─────────────────────┬──────────────────┬──────────────┐
+    ↓                     ↓                  ↓              ↓
+┌─────────────┐  ┌──────────────┐  ┌──────────────┐  ┌─────────────┐
+│ Search      │  │ Code         │  │ Data         │  │ Analysis    │
+│ Agent       │  │ Agent        │  │ Agent        │  │ Agent       │
+│ (domain:    │  │ (domain:     │  │ (domain:     │  │ (domain:    │
+│ web search) │  │ code execute)│  │ SQL/DB)      │  │ analytics)  │
+└─────────────┘  └──────────────┘  └──────────────┘  └─────────────┘
+    ↓                     ↓                  ↓              ↓
+    └─────────────────────┬──────────────────┬──────────────┘
+                          ↓
+                    Aggregate Results
+                          ↓
+                    Final Answer
+```
+
+**Key characteristics:**
+- **Multiple LLM instances** each specialized in one domain
+- **Coordinator routes** tasks based on expertise
+- **Parallel execution** (multiple agents work simultaneously)
+- **Graceful degradation** (if one agent fails, others continue)
+
+**When to use multi-agent:**
+- Complex tasks (multiple domains needed: search + code + data)
+- High complexity (many tool calls, parallel work beneficial)
+- Specialized expertise (need search expert AND code expert AND analyst)
+- Scalability needed (horizontal: add more agents for more tasks)
+- Fault tolerance important (one agent fails, others continue)
+
+**Example multi-agent task:**
+```
+User: "Analyze my sales data, find anomalies, and generate a report."
+→ Coordinator routes to: Data Agent + Analysis Agent + Report Agent
+→ Data Agent: queries SQL database
+→ Analysis Agent: runs anomaly detection (parallel)
+→ Report Agent: generates markdown report
+→ All results aggregated
+(Multiple agents, multiple domains of expertise)
+```
+
+### Single vs Multi: Comparison Table
+
+| Dimension | Single-Agent | Multi-Agent |
+|---|---|---|
+| **Architecture** | One LLM + tools | Coordinator + multiple LLMs |
+| **Complexity** | Simple | High |
+| **Cost per query** | ~$0.01-0.05 (1 LLM call) | ~$0.05-0.20 (multiple LLM calls) |
+| **Latency** | 1-3 sec (sequential) | 2-5 sec (parallel faster than sequential) |
+| **Fault tolerance** | Single point of failure | Graceful degradation |
+| **Specialization** | Generalist | Specialists per domain |
+| **Debugging** | Easy (one agent) | Hard (multiple hand-offs) |
+| **Scaling** | Vertical (better model) | Horizontal (more agents) |
+| **Failure modes** | Agent confused (wrong tool) | Routing failure, agent specialization mismatch |
+| **Best for** | Simple, single-domain | Complex, multi-domain |
+
+### Decision Framework: Single vs Multi?
+
+**Start with single-agent if:**
+- Task fits one domain (search, code, analysis, SQL — pick one)
+- Latency critical (< 2 seconds needed)
+- Cost critical (minimize LLM calls)
+- Team small (easier to debug one agent)
+
+**Upgrade to multi-agent if:**
+- Single-agent fails or is slow
+- Task requires multiple domains
+- Parallelization would help latency
+- Fault tolerance needed
+- Specialization would improve accuracy
+
+**Example migration:**
+```
+Day 1: Single search agent
+  User: "Find AI papers published in 2024"
+  Agent: web search → returns papers
+  Works but slow (10 seconds)
+
+Day 5: Add multi-agent (Search + Analysis)
+  User: "Find AI papers from 2024, categorize by subfield"
+  Coordinator: routes to Search (find papers), then Analysis (categorize)
+  Parallel: Search finds 50 papers while Analysis waits
+  Then: Analysis categorizes in one pass
+  Latency: 5 seconds (faster)
+```
+
+---

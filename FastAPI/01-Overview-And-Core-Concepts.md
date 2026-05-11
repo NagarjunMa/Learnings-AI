@@ -134,3 +134,43 @@ Deprecated alternative (still seen in older codebases):
 async def startup():
     app.state.model = load_model()
 ```
+
+## Yield Dependencies (Teardown)
+
+Dependencies with `yield` run setup before the route and teardown after. Essential for DB sessions and resource cleanup.
+
+```python
+from typing import AsyncGenerator
+from sqlalchemy.ext.asyncio import AsyncSession
+
+async def get_db() -> AsyncGenerator[AsyncSession, None]:
+    async with AsyncSessionLocal() as session:
+        try:
+            yield session          # route handler runs here
+            await session.commit() # success → commit
+        except Exception:
+            await session.rollback()
+            raise
+        # session.close() called automatically by context manager
+
+@app.get("/users/{id}")
+async def get_user(id: int, db: AsyncSession = Depends(get_db)):
+    user = await db.get(User, id)
+    return user
+```
+
+Yield dependencies can be chained — outer dependency wraps inner:
+```python
+async def get_redis():
+    client = aioredis.from_url(settings.redis_url)
+    try:
+        yield client
+    finally:
+        await client.aclose()
+
+@app.get("/cached/{key}")
+async def get_cached(key: str, redis=Depends(get_redis)):
+    return await redis.get(key)
+```
+
+**Rule**: Any resource that needs cleanup (DB session, HTTP client, file handle, cache connection) should be a yield dependency, not a global.

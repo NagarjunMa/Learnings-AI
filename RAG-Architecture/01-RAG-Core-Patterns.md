@@ -370,12 +370,12 @@ final_results = reranker.predict([
 
 **RAGAS metrics:**
 
-| Metric | What it measures | How |
-|---|---|---|
-| **Faithfulness** | Does answer use only the context (not hallucinate)? | LLM judges if statements are entailed by context |
-| **Answer Relevance** | Does answer address the question? | LLM scores relevance to original query |
-| **Context Precision** | Are retrieved docs relevant? | % of retrieved docs that are relevant |
-| **Context Recall** | Did we retrieve all necessary info? | % of necessary info in retrieved docs |
+| Metric                | What it measures                                    | How                                              |
+| --------------------- | --------------------------------------------------- | ------------------------------------------------ |
+| **Faithfulness**      | Does answer use only the context (not hallucinate)? | LLM judges if statements are entailed by context |
+| **Answer Relevance**  | Does answer address the question?                   | LLM scores relevance to original query           |
+| **Context Precision** | Are retrieved docs relevant?                        | % of retrieved docs that are relevant            |
+| **Context Recall**    | Did we retrieve all necessary info?                 | % of necessary info in retrieved docs            |
 
 ```python
 from ragas import evaluate

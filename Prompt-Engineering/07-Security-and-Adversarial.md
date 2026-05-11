@@ -349,7 +349,7 @@ if results:
 
 ## Defense Limitations
 
-**Critical finding:** 90%+ of published prompt injection defenses can be bypassed with systematic optimization.
+**Critical finding:** 90%+ of published prompt-injection defenses can be bypassed through systematic optimization.
 
 **Why:**
 - Attackers can test defenses at scale

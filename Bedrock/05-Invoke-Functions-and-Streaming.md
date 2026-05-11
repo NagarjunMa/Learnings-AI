@@ -306,14 +306,14 @@ print(text)
 
 ### Why converse > invoke_model
 
-| Aspect | invoke_model | converse |
-|---|---|---|
-| Body schema | Per-model (Claude ≠ Llama ≠ Titan) | Identical across all |
-| Response parsing | Model-specific | Normalized |
-| System prompt | In body.system (string or list per model) | Unified list format |
-| Temperature/topP | In inferenceConfig per model | Unified inferenceConfig |
-| Multi-turn | Must manage messages manually | Same API |
-| Tool calling | Partial support | Full support (future-proof) |
+| Aspect           | invoke_model                              | converse                    |
+| ---------------- | ----------------------------------------- | --------------------------- |
+| Body schema      | Per-model (Claude ≠ Llama ≠ Titan)        | Identical across all        |
+| Response parsing | Model-specific                            | Normalized                  |
+| System prompt    | In body.system (string or list per model) | Unified list format         |
+| Temperature/topP | In inferenceConfig per model              | Unified inferenceConfig     |
+| Multi-turn       | Must manage messages manually             | Same API                    |
+| Tool calling     | Partial support                           | Full support (future-proof) |
 
 **Recommendation:** Use `converse` / `converse_stream` for everything. Only use `invoke_model` if:
 - You need model-specific low-level control
@@ -864,10 +864,10 @@ if "returnControl" in event:
 
 ### Client vs Model Responsibility
 
-| Responsibility | Example |
-|---|---|
-| **Bedrock Agent** | Decides when to call tools, interprets results, reasons |
-| **You (returnControl)** | Execute custom DB queries, call private APIs |
+| Responsibility          | Example                                                 |
+| ----------------------- | ------------------------------------------------------- |
+| **Bedrock Agent**       | Decides when to call tools, interprets results, reasons |
+| **You (returnControl)** | Execute custom DB queries, call private APIs            |
 
 Bedrock Agents cannot call arbitrary APIs (security + isolation). They can call:
 - Bedrock Knowledge Base (built-in)

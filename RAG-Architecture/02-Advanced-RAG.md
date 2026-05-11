@@ -302,15 +302,15 @@ def selfrag(question: str):
 
 When to use which?
 
-| Factor | RAG | Fine-Tuning |
-|---|---|---|
-| **Knowledge updates** | Real-time (just re-index docs) | Slow (retrain model) |
-| **Knowledge depth** | Broad (entire corpus searchable) | Deep (absorbed into params) |
-| **Cost** | Lower (vector DB + retrieval) | Higher (training infra) |
-| **Latency** | Higher (retrieval step) | Lower (direct prediction) |
-| **Use case** | Open-domain QA, document search | Task-specific (classification, summarization style) |
-| **Hallucination** | Lower if grounded in retrieval | Higher (model may fabricate) |
-| **Compliance** | Better (citations trace to source) | Worse (can't explain origin of facts) |
+| Factor                | RAG                                | Fine-Tuning                                         |
+| --------------------- | ---------------------------------- | --------------------------------------------------- |
+| **Knowledge updates** | Real-time (just re-index docs)     | Slow (retrain model)                                |
+| **Knowledge depth**   | Broad (entire corpus searchable)   | Deep (absorbed into params)                         |
+| **Cost**              | Lower (vector DB + retrieval)      | Higher (training infra)                             |
+| **Latency**           | Higher (retrieval step)            | Lower (direct prediction)                           |
+| **Use case**          | Open-domain QA, document search    | Task-specific (classification, summarization style) |
+| **Hallucination**     | Lower if grounded in retrieval     | Higher (model may fabricate)                        |
+| **Compliance**        | Better (citations trace to source) | Worse (can't explain origin of facts)               |
 
 **Combination:** RAG + fine-tuning.
 - Fine-tune on domain-specific instruction following (e.g., financial domain language style)
